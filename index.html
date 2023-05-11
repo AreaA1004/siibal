@@ -3,13 +3,15 @@
 <head>
 <title> Greeting </title>
 <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-
+<py-env>
+- asciimatics
+</py-env>
 </head> 
 
 <body>
 <py-script> 
  python setup.py
- pip install asciimatics
+ pip install https://github.com/peterbrittain/asciimatics.git
   from asciimatics.effects import Print
 from asciimatics.renderers import FigletText, Rainbow
 from asciimatics.scene import Scene
