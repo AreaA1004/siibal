@@ -1,0 +1,40 @@
+<html> 
+
+<head>
+<title> Greeting </title>
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+</head> 
+
+<body>
+<py-script> 
+ 
+  from asciimatics.effects import Print
+from asciimatics.renderers import FigletText, Rainbow
+from asciimatics.scene import Scene
+from asciimatics.screen import Screen
+
+def demo(screen: Screen):
+    x = "HELLO"
+    text = Rainbow(screen, FigletText(x, font="basic"))
+    screen.play([
+            Scene([
+                Print(
+                    screen,
+                    text,
+                    (screen.height - text.max_height) // 2,
+                    (screen.width - text.max_width) // 2,
+                ),
+            ])
+    ])
+
+
+if __name__ == "__main__":
+    Screen.wrapper(demo)
+  
+  </py-script>
+<h1>글 제목 태그입니다. h1에서 h6까지 있는데 가장 큰 글 제목입니다.</h1>
+<p>문단의 내용을 이 태그안에 적습니다. 줄을 바꿀 때는 <br />태그를 사용합니다.</p>
+</body> 
+
+</html>
